@@ -221,6 +221,39 @@ nav {
     }
 }
 
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+
+    & h4 {
+        display: inline;
+        padding: 20px 60px;
+        color: lighten($text-color-dark, 50%);
+        font-weight: 400;
+    }
+
+    & ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+
+        & li {
+            display: grid;
+            place-content: center;
+            width: 35px;
+            height: 35px;
+            margin: 0 5px;
+            background-color: black;
+            border-radius: 50%;
+
+            & i{
+                color: rgba(255,255,255,1);
+            }
+        }
+    }
+}
+
 /* Media */
 @media (max-width: 1168px) {
     .portfolio-cell-wrapper {
@@ -258,4 +291,10 @@ nav {
         font-size: 0.8em;
     }
 
+    /* Footer */
+    footer{
+        & h4{
+            padding: 20px 5px;
+        }
+    }
 }
