@@ -154,19 +154,82 @@ nav {
         color: $theme-color;
     }
 
-    & h2{
+    & h2 {
         text-align: center;
         padding: 5px;
     }
 
-    & p{
+    & p {
         color: lighten($text-color-dark, 50%);
         padding: 0 30 30 30;
     }
 }
 
+/* Portfolio */
+.portfolio {
+    background-color: rgba(0, 0, 0, 0.05);
+
+    & > h3 {
+        padding: 30px 0 0 0;
+        font-size: 2.5em;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    & > p {
+        padding: 0 0 20px;
+        color: lighten($text-color-dark, 50%);
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: 400;
+    }
+}
+
+.portfolio-cell-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    place-content: center;
+    gap: 10px;
+}
+
+.portfolio-cell {
+    padding: 40px;
+    grid-column: span 1;
+    width: 100%;
+    aspect-ratio: 0.8;
+
+    & img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+    }
+
+    & h3,
+    h2 {
+        position: relative;
+        top: -5px;
+        padding: 10px;
+        margin: 0;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    & h3 {
+        color: lighten($text-color-dark, 50%);
+        font-weight: 400;
+        padding: 5px 0 20px 0;
+    }
+}
+
 /* Media */
+@media (max-width: 1168px) {
+    .portfolio-cell-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 767px) {
+    /* Splash */
     .splash {
         font-size: 0.6em;
         background-color: rgba(255, 255, 255, 0.3);
@@ -177,13 +240,22 @@ nav {
         padding: 15px 35px;
     }
 
+    /* Services */
     .services-cell-wrapper {
         flex-direction: column;
         align-items: center;
     }
 
-    .services-cell{
-       padding: 20px 40px;
-       width: max(250px, 80%);
+    .services-cell {
+        padding: 20px 40px;
+        width: max(250px, 80%);
     }
+
+    /* Portfolio */
+    .portfolio-cell-wrapper {
+        grid-template-columns: max(300px, 80%);
+        place-content: center;
+        font-size: 0.8em;
+    }
+
 }
